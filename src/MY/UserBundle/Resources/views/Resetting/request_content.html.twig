@@ -1,0 +1,24 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% extends "@MYUser/layoutconnexion.html.twig" %}
+{% block container %}
+    <div class="inner-bg" style="margin-top: 0%;padding-top: 7%" >
+    <div class="container" >
+    <div class="row" >
+    <div class="col-sm-4 col-sm-offset-4 form-box" >
+    <div class="form-bottom">
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div class="form-group">
+        <label for="username" class="sr-only">{{ 'resetting.request.username'|trans }}</label>
+        <input type="text" id="username" name="username" required="required"  class="form-username form-control" placeholder="Adresse mail ou utilisateur"/>
+    </div>
+    <div>
+        <button type="submit" value="{{ 'resetting.request.submit'|trans }}" class="btn">{{ 'resetting.request.submit'|trans }}</button>
+    </div>
+</form>
+</div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

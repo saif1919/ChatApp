@@ -1,0 +1,20 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends '@MYUser/layout.html.twig' %}
+
+{% block container %}
+
+<div class="container" style="margin-bottom: 5%">
+    <div class="panel panel-default">
+        <div class="panel-heading center" >
+
+        </div>
+        <div class="panel-body" style="margin-bottom: 4%">
+
+<div class="fos_user_user_show" style="margin-bottom: 4%; ">
+    <p class="center">{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p class="center">{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

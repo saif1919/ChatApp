@@ -1,0 +1,10 @@
+{% extends "@MYUser/layoutconnexion.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block container %}
+<div class="container" style="margin-top: 15%;margin-bottom: 16%">
+
+    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+    </div>
+{% endblock %}

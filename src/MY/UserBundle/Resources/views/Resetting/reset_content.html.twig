@@ -1,0 +1,35 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% extends "@MYUser/layoutconnexion.html.twig" %}
+{% block container %}
+<div class="inner-bg" style="margin-top: 0%;padding-top: 7%" >
+    <div class="container" >
+        <div class="row" >
+            <div class="col-sm-4 col-sm-offset-4 form-box" >
+                <div class="form-bottom">
+                    {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+                    <div class="form-group">
+                        {{ form_label(form.plainPassword.first) }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.plainPassword.second) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control '}}) }}
+                    </div>
+<div class="form-group">
+        <button type="submit" value="{{ 'resetting.reset.submit'|trans }}" class="btn">{{ 'resetting.reset.submit'|trans }}</button>
+    </div>
+{{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

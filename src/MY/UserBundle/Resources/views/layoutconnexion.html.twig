@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% block head %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        {#<link rel="icon" type="image/png" href="{{ asset('bundles/myuser/images/ico/logo1.ico') }}">#}
+        <title>Chat</title>
+
+
+        <!-- core CSS -->
+        <link href="{{ asset('bundles/myuser/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/myuser/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/myuser/css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/myuser/css/prettyPhoto.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/myuser/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('bundles/myuser/css/responsive.css') }}" rel="stylesheet">
+
+       {%  if app.request.get('_route') =="fos_user_registration_register" %}
+          {# #} <link rel="stylesheet" href="{{ asset('bundles/myuser/inscription/css/style.css') }}" />
+            <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+
+           {% else %}
+
+               <link href="{{ asset('bundles/myuser/css/style.css') }}" rel="stylesheet">
+               <link href="{{ asset('bundles/myuser/css/form-elements.css') }} " rel="stylesheet">
+        {% endif %}
+
+
+        <link href="{{ asset('bundles/myuser/css/MonStyle.css') }}" rel="stylesheet">
+
+
+
+
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+        <!--[if lt IE 9]>
+        <script src="{{ asset('bundles/myuser/js/html5shiv.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/js/respond.min.js') }}"></script>
+        <![endif]-->
+
+        <script>
+            $( function() {
+                $( "#tabs" ).tabs();
+            } );
+        </script>
+
+    </head><!--/head-->
+
+{% endblock %}
+
+{% block body %}
+
+    <body class="homepage">
+
+    {% block header %}
+        <header id="header">
+
+            <nav class="navbar navbar-inverse  " role="banner" style="background-color: white">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button></div>
+
+                    <div class="collapse navbar-collapse navbar-right">
+                        <ul class="nav navbar-nav">
+
+
+                            {%  if app.request.get('_route') =="fos_user_security_login" %}
+                                <li class="active"><a href="{{ path('fos_user_security_login') }}" >Connexion</a></li>
+                            {% else %}
+                                <li><a href="{{ path('fos_user_security_login') }}" style="color: #000000;">Connexion</a></li>
+                            {% endif %}
+
+                            {%  if app.request.get('_route') =="fos_user_registration_register" %}
+                                <li class="active"><a href="{{ path('fos_user_registration_register') }}" >Inscription</a></li>
+                            {% else %}
+                                <li><a href="{{ path('fos_user_registration_register') }}" style="color: #000000;">Inscription</a></li>
+                            {% endif %}
+
+                        </ul>
+                    </div>
+                </div><!--/.container-->
+            </nav><!--/nav-->
+
+        </header><!--/header-->
+    {% endblock %}
+
+    {% block container %}
+
+
+    {% endblock %}
+
+    {% block footer %}
+        <footer id="footer" class="midnight-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                        &copy; 2017 <a target="_blank" href="https://www.facebook.com" title="">FACEBOOK</a>. All Rights Reserved.
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                </div>
+            </div>
+        </footer><!--/#footer-->
+    {% endblock %}
+    {% block script %}
+
+        <script src="{{ asset('bundles/myuser/js/jquery.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/js/jquery.prettyPhoto.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/js/jquery.isotope.min.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/js/main.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/js/wow.min.js') }}"></script>
+        <script src="{{ asset('bundles/myuser/jquery/jquery-3.2.0.js') }}"></script>
+    {% endblock %}
+    </body>
+{% endblock %}
+</html>

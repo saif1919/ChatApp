@@ -1,0 +1,32 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "@MYUser/layoutconnexion.html.twig" %}
+
+
+{% block container %}
+
+
+    <div class="inner-bg" style="margin-top: 0%;padding-top: 7%" >
+    <div class="container" >
+        <div class="row" >
+            <div class="col-sm-4 col-sm-offset-4 form-box" >
+                <div class="form-bottom">
+                    <div class="form-group">
+
+    <p style="color: white;">Bienvenu , {{ app.user.username }} votre compte est activé !!</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+                        </div>
+                    <div>
+
+              <a href="{{ path('fos_user_security_login') }}"><button type="button"  value="Login" class="btn" style="width: 93%">Login</button></a>
+    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+{% endblock %}
